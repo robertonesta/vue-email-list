@@ -14,8 +14,9 @@ const { createApp } = Vue
             axios
             .get(this.url)
             .then(response => {
-                console.log(response.data);
-                const mail = response.data.response 
+                //console.log(response.data);
+                const mail = response.data.response
+                console.log(mail) 
                 this.mails.push(mail)             
 
             }).catch(error => {
