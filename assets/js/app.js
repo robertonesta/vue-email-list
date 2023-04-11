@@ -6,7 +6,8 @@ const { createApp } = Vue
       return {
         emailGenerator: 10,
         url: 'https://flynn.boolean.careers/exercises/api/random/mail',
-        mails: []
+        mails: [],
+        error: null
       }
     },
     mounted() {
@@ -14,10 +15,12 @@ const { createApp } = Vue
             axios
             .get(this.url)
             .then(response = {
-                
+
+            }).catch(error => {
+                console.error(error.message);
+                this.error = error.message
             })
         }
-
     }
   }).mount('#app')
 

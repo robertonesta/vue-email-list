@@ -10,8 +10,14 @@
 <body>
     <div id="app">
         <h1>Mails Generator</h1>
-        <ul>
-            <li></li>
+        <div v-if="error">
+            <strong>Error!</strong>{{error}}
+        </div>
+
+        <ul v-else>
+            <li v-for="mail in mails">
+                {{mail}}
+            </li>
         </ul>
 
     </div>
